@@ -1,0 +1,26 @@
+﻿@model ASPLogInScreen101.Models.LogInModel
+
+@{
+    ViewBag.Title = "LogInView.cshtml";
+}
+
+<h2>LogInView.cshtml</h2>
+
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
+@using (Html.BeginForm("Login", "LogIn", FormMethod.Post))
+{
+<label>Kullanıcı Adı:</label>
+@Html.TextBoxFor(m => m.Username)
+<br />
+
+<label>Şifre:</label>
+@Html.PasswordFor(m => m.Password)
+<br />
+
+<button type="submit">Giriş Yap</button>
+}
